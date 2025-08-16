@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo Trabalhista</title>
+</head>
+<body>
+
+<script>
+    // 1 - Descobrir o valor da hora
+    function calcularValorHora(salario, horasMensais) {
+        return salario / horasMensais;
+    }
+
+    // 2 - Calcular valor da hora extra (50% a mais)
+    function calcularValorHoraExtra(valorHora) {
+        return valorHora * 1.5;
+    }
+
+    // 3 - Calcular total de valor em horas extras
+    function calcularTotalHoraExtra(qtdHorasExtras, valorHoraExtra) {
+        return qtdHorasExtras * valorHoraExtra;
+    }
+
+    // 4 - Somar salário com horas extras
+    function calcularSalarioFinal(salario, totalExtras) {
+        return salario + totalExtras;
+    }
+
+    // --- Entrada de dados (via prompt) ---
+    let salario = parseFloat(prompt("Digite o salário mensal (R$):"));
+    let horasMensais = parseFloat(prompt("Digite a quantidade de horas trabalhadas por mês:"));
+    let qtdHorasExtras = parseFloat(prompt("Digite a quantidade de horas extras feitas:"));
+
+    // Verificações básicas
+    if (isNaN(salario) || isNaN(horasMensais) || isNaN(qtdHorasExtras)) {
+        alert("Por favor, digite valores válidos.");
+    } else {
+        // Processamento
+        let valorHora = calcularValorHora(salario, horasMensais);
+        let valorHoraExtra = calcularValorHoraExtra(valorHora);
+        let totalExtras = calcularTotalHoraExtra(qtdHorasExtras, valorHoraExtra);
+        let salarioFinal = calcularSalarioFinal(salario, totalExtras);
+
+        // 5 - Mostrar resultado final
+        alert(`Resumo do cálculo trabalhista:
+        
+Salário base: R$ ${salario.toFixed(2)}
+Valor da hora normal: R$ ${valorHora.toFixed(2)}
+Valor da hora extra (50%): R$ ${valorHoraExtra.toFixed(2)}
+Total de horas extras: ${qtdHorasExtras}h
+Valor total de extras: R$ ${totalExtras.toFixed(2)}
+
+💰 Total a receber: R$ ${salarioFinal.toFixed(2)}
+        `);
+    }
+</script>
+
+</body>
+</html>

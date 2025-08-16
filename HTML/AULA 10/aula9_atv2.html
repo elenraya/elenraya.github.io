@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNÇÃO DE SAUDAÇÃO</title>
+</head>
+<body>
+    <h2>ATIVIDADE 1: FUNÇÃO DE SAUDAÇÃO</h2>
+<script>
+   function saudacao(nome) {
+        let periodo = prompt("Selecione o período:\n" +
+            "1 - MATUTINO\n" +
+            "2 - VESPERTINO\n" +
+            "3 - NOTURNO\n"
+        );
+        
+        if (periodo === '1') {
+            console.log(`Bom dia, ${nome}, seja bem-vindo(a)!`);
+        } else if (periodo === '2') {
+            console.log(`Boa tarde, ${nome}, seja bem-vindo(a)!`);
+        } else if (periodo === '3') {
+            console.log(`Boa noite, ${nome}, seja bem-vindo(a)!`);
+        } else {
+            console.log("Selecione uma opção válida.");
+        }
+    }
+
+    let nome = prompt("Digite seu nome: ");
+    if (nome !== null && nome.trim("")) {
+        saudacao(nome); 
+    } else {
+        alert("Digite o seu nome primeiro..."); 
+    } 
+</script>
+</body>
+</html>
