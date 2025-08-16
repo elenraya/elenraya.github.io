@@ -14,6 +14,10 @@ function totalsalario(salario, totalextras) {
     return salario + totalextras;
 }
 
+
+// TESTE
+
+
 let salario = parseFloat(prompt("Digite o salário mensal (R$):"));
 let horasmensais = parseFloat(prompt("Digite a quantidade de horas trabalhadas por mês:"));
 let horaextra = parseFloat(prompt("Digite a quantidade de horas extras realizadas:"));
